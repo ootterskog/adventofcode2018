@@ -12,7 +12,9 @@ public class Regex {
         Matcher m = Pattern.compile(regex)
                 .matcher(string);
         while (m.find()) {
-            allMatches.add(m.group());
+            for (int j = 0; j <= m.groupCount(); j++) {
+                allMatches.add(m.group(j));
+            }
         }
         return allMatches;
     }
